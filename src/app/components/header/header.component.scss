@@ -2,24 +2,28 @@
 
 .header {
   display: block;
-  max-height: 100px;
+  height: 10rem;
   position: relative;
-  height: 100%;
   width: 100%;
-  //   background-color: goldenrod;
 
   &__brand {
-    position: absolute;
     max-width: 14rem;
     width: 100%;
+    margin: 0;
+    position: absolute;
     top: 50%;
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    text-align: center;
   }
   &__user {
-    position: relative;
+    position: absolute;
     max-width: 10rem;
     width: 100%;
-    float: right;
+    right: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     text-align: center;
     a {
       text-decoration: none;
