@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "_id": "01",
+      "username": "Phillip",
+      "avatarUrl": "",
+      "role": "read-write"
+    },
+    {
+      "_id": "02",
+      "username": "Jason",
+      "avatarUrl": "",
+      "role": "read"
+    },
+    {
+      "_id": "03",
+      "username": "Amanda",
+      "avatarUrl": "",
+      "role": "read-write"
+    }
+  ]
+}
