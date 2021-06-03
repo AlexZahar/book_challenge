@@ -3,19 +3,19 @@
     {
       "_id": "01",
       "username": "Phillip",
-      "avatarUrl": "",
+      "avatarUrl": "../../../assets/avatars/batman-avatar",
       "role": "read-write"
     },
     {
       "_id": "02",
       "username": "Jason",
-      "avatarUrl": "",
+      "avatarUrl": "../../../assets/avatars/harley-quinn-avatar",
       "role": "read"
     },
     {
       "_id": "03",
       "username": "Amanda",
-      "avatarUrl": "",
+      "avatarUrl": "../../../assets/avatars/beard-avatar",
       "role": "read-write"
     }
   ]

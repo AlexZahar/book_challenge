@@ -12,10 +12,22 @@ import { ContentHeaderComponent } from './components/content-header/content-head
 import { ContentAreaComponent } from './pages/content-area/content-area.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, EditorComponent, CollectionComponent, SideNavigationComponent, ContentHeaderComponent, ContentAreaComponent, CardComponent, SearchBoxComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    EditorComponent,
+    CollectionComponent,
+    SideNavigationComponent,
+    ContentHeaderComponent,
+    ContentAreaComponent,
+    CardComponent,
+    SearchBoxComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

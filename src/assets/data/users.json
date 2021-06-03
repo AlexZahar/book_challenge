@@ -1,0 +1,21 @@
+[
+  {
+    "_id": "01",
+    "username": "Phillip",
+    "avatarUrl": "assets/avatars/batman-avatar.svg",
+    "role": "read-write"
+  },
+  {
+    "_id": "02",
+    "username": "Jason",
+    "avatarUrl": "assets/avatars/beard-avatar.svg",
+    "role": "read"
+  },
+  {
+    "_id": "03",
+    "username": "Amanda",
+    "avatarUrl": " assets/avatars/harley-quinn-avatar.svg",
+
+    "role": "read-write"
+  }
+]

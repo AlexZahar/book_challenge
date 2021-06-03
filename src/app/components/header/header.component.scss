@@ -1,0 +1,34 @@
+@import '../../../styles/abstracts/variables';
+
+.header {
+  display: block;
+  max-height: 100px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  //   background-color: goldenrod;
+
+  &__brand {
+    position: absolute;
+    max-width: 14rem;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__user {
+    position: relative;
+    max-width: 10rem;
+    width: 100%;
+    float: right;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: $color-black;
+    }
+  }
+  &__logo,
+  &__avatar {
+    display: inline-block;
+    max-height: 6rem;
+  }
+}

@@ -15,8 +15,10 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "module": "es2020",
+    "strictPropertyInitialization": false,
     "target": "es2017",
-    "lib": ["es2018", "dom"]
+    "lib": ["es2018", "dom"],
+    "resolveJsonModule": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
