@@ -1,0 +1,62 @@
+@import '../../../styles/abstracts/variables';
+.card {
+  display: block;
+  margin: 0 auto;
+  max-width: 50rem;
+  position: relative;
+  //   height: 600px;
+  width: 100%;
+  border-radius: 0.6rem;
+  background-color: $color-white;
+  -webkit-box-shadow: 6px 8px 12px -1px rgba(0, 0, 0, 0.19);
+  box-shadow: 6px 8px 12px -1px rgba(0, 0, 0, 0.19);
+  &__wrapper {
+    padding: 1rem 0;
+  }
+  &__image {
+    display: inline-block;
+    text-align: center;
+    // margin-left: 30px;
+    img {
+      max-width: 14rem;
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  &__preview {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 20rem;
+    margin-left: 2rem;
+    top: 0;
+    &-synopsis,
+    &-release {
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    max-width: 26rem;
+    &__image {
+      display: block;
+      padding-top: 1rem;
+      margin: 0 auto;
+
+      img {
+        max-width: 24rem;
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+    &__preview {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+  }
+}

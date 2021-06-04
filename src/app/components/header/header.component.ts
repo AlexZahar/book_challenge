@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../core/interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import * as userData from '../../core/data/signed-in-user.json';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,6 +13,12 @@ export class HeaderComponent implements OnInit {
   users: any = [];
   user: User;
   avatar: string = '';
+  newUser = {
+    _id: '05',
+    username: 'Phillip',
+    avatarUrl: 'assets/avatars/batman-avatar.svg',
+    role: 'read-write',
+  };
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
@@ -20,15 +27,29 @@ export class HeaderComponent implements OnInit {
 
   async getUsers() {
     try {
-      this.httpClient.get('assets/data/users.json').subscribe(data => {
+      await this.httpClient.get('assets/data/users.json').subscribe(data => {
         console.log(data);
         this.users = data;
         this.user = this.users[0];
-        console.log(this.user?.avatarUrl);
-        this.avatar = this.user?.avatarUrl;
       });
     } catch (error) {
       console.log(error);
     }
   }
+
+  // createUser(): Observable<any> {
+  //   return this.httpClient.delete(
+  //     'http://localhost:4200/assets/data/users.json',
+  //     this.newUser
+  //   );
+  // }
+  // async create() {
+  //   try {
+  //     const response = await this.createUser();
+  //     return response;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   return;
+  // }
 }

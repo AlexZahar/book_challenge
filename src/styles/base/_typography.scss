@@ -4,6 +4,7 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: $color-gray-dark;
+  background-color: $color-gray-light-1;
   // padding: 3rem;
 }
 
@@ -53,6 +54,9 @@ body {
   font-size: $default-font-size;
   font-weight: 700;
   text-transform: uppercase;
+}
+p {
+  font-size: $default-font-size;
 }
 .paragraph {
   font-size: $default-font-size;
