@@ -1,0 +1,26 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
+
+.header {
+  //   position: fixed;
+  //   width: 70%;
+  //   bottom: auto;
+  z-index: $z-index-header;
+  &__wrapper {
+    display: block;
+    // background-color: greenyellow;
+    height: 6rem;
+    position: relative;
+    //   @include sticky;
+    input[type='search'] {
+      display: inline;
+      right: 1rem;
+      position: absolute;
+      top: 50%;
+      font-size: medium;
+      transform: translateY(-50%);
+      border-radius: 5px;
+      border-color: rgb(110, 110, 110);
+    }
+  }
+}

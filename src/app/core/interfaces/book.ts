@@ -6,7 +6,7 @@ export interface Book {
   title: string;
   cover?: string;
   genres?: GenreType[];
-  synopsis?: string;
+  synopsis: string;
   releaseDate?: string;
   editable?: boolean;
   deletable?: boolean;

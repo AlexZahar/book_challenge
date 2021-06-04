@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, Output, EventEmitter,ViewChild, ElementRef  } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-content-header',
@@ -13,11 +20,7 @@ export class ContentHeaderComponent implements OnInit {
 
   ngOnInit(): void {}
   searchThis() {
-    this.searchWord = this.searchInput.nativeElement.value
-    console.log(this.searchInput.nativeElement.value)
+    this.searchWord = this.searchInput.nativeElement.value;
     this.searchCriteria.emit(this.searchWord);
-    
-    
   }
-
 }

@@ -9,8 +9,8 @@ import { Book } from 'src/app/core/interfaces/book';
 })
 export class CollectionComponent implements OnInit {
   books: Book[] = [];
-  // book: any;
   filteredBooks: Book[] = [];
+
   constructor(private api: ApiService) {}
   ngOnInit(): void {
     this.getBooks();
@@ -19,29 +19,23 @@ export class CollectionComponent implements OnInit {
   getBooks() {
     try {
       this.api.getBooks().subscribe(data => {
-        console.log('Books Data:', data);
         this.books = data;
-        this.filteredBooks = this.books
-       
-        
+        this.filteredBooks = this.books;
       });
     } catch (error) {
       console.log(error);
     }
   }
 
-  onSearch(searchData:string) {
+  onSearch(searchData: string) {
     if (searchData) {
-      this.filteredBooks = this.books
-      this.filteredBooks = this.filteredBooks.filter( (ele:Book) => {
-      let arrayelement = ele.title.toLowerCase()
-        return arrayelement.includes(searchData.toLowerCase())
-        });
-        console.log(this.filteredBooks);
-      } else {
-        this.filteredBooks = this.books
-        console.log(this.filteredBooks);
+      this.filteredBooks = this.books;
+      this.filteredBooks = this.filteredBooks.filter((book: Book) => {
+        let arrayelement = book.title.toLowerCase();
+        return arrayelement.includes(searchData.toLowerCase());
+      });
+    } else {
+      this.filteredBooks = this.books;
     }
-    
   }
 }
