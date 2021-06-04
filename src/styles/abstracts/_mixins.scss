@@ -1,8 +1,13 @@
 @mixin clearfix {
-    &::after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
   }
-  
+}
+@mixin sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-bottom: 10rem;
+}
