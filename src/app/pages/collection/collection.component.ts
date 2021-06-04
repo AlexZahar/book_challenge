@@ -32,9 +32,8 @@ export class CollectionComponent implements OnInit {
 
   onSearch(searchData:string) {
     if (searchData) {
-
+      this.filteredBooks = this.books
       this.filteredBooks = this.filteredBooks.filter( (ele:Book) => {
-      // book.title.toLowerCase().includes(searchData.toLowerCase());
       let arrayelement = ele.title.toLowerCase()
         return arrayelement.includes(searchData.toLowerCase())
         });
