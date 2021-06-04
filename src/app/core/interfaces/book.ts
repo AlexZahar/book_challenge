@@ -3,7 +3,7 @@ import { GenreType } from '../enums/genres-type';
 export interface Book {
   _id?: string;
   author?: string;
-  title?: string;
+  title: string;
   cover?: string;
   genres?: GenreType[];
   synopsis?: string;

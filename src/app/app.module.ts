@@ -13,6 +13,7 @@ import { ContentAreaComponent } from './pages/content-area/content-area.componen
 import { CardComponent } from './components/card/card.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CardComponent,
     SearchBoxComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
