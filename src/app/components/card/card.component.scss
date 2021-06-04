@@ -43,19 +43,16 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 430px) {
   .card {
     max-width: 30rem;
-    // padding: 2rem;
-
     &__image {
       display: block;
       padding-top: 1rem;
       margin: 0 auto;
 
       img {
-        // width: 50%;
-        width: 100%;
+        max-width: 200px;
         margin: 0 auto;
         display: block;
       }
