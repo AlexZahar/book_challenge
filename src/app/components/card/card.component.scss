@@ -1,9 +1,9 @@
 @import '../../../styles/abstracts/variables';
 .card {
   display: block;
-  margin: 0 auto;
-  max-width: 50rem;
+  margin: 3rem auto;
   position: relative;
+  max-width: 50rem;
   //   height: 600px;
   width: 100%;
   border-radius: 0.6rem;
@@ -16,37 +16,45 @@
   &__image {
     display: inline-block;
     text-align: center;
-    // margin-left: 30px;
+    width: 40%;
+
+    margin-left: 2rem;
+
     img {
-      max-width: 14rem;
+      vertical-align: bottom;
       width: 100%;
-      margin: 0 auto;
-      display: block;
     }
   }
   &__preview {
     display: inline-block;
     vertical-align: top;
-    max-width: 20rem;
+    width: 48%;
     margin-left: 2rem;
-    top: 0;
+
     &-synopsis,
     &-release {
       padding-top: 1rem;
     }
   }
+  &__menu-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   .card {
-    max-width: 26rem;
+    max-width: 30rem;
+    // padding: 2rem;
+
     &__image {
       display: block;
       padding-top: 1rem;
       margin: 0 auto;
 
       img {
-        max-width: 24rem;
+        // width: 50%;
         width: 100%;
         margin: 0 auto;
         display: block;
@@ -54,7 +62,7 @@
     }
     &__preview {
       display: block;
-      width: 100%;
+      width: 80%;
       padding: 1rem;
       margin: 0 auto;
     }

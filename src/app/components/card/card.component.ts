@@ -1,30 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../core/services/api.service';
-import { Book } from '../../core/interfaces/book';
+import { Component, OnInit, Input } from '@angular/core';
+// import { ApiService } from '../../core/services/api.service';
+// import { Book } from '../../core/interfaces/book';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
-  books: Book[] = [];
-  constructor(private api: ApiService) {}
-  book: any;
+  // books: Book[] = [];
+  @Input() book: any;
+  constructor() {}
+  // book: any;
   ngOnInit(): void {
-    this.getBooks();
+    // this.getBooks();
   }
 
-  getBooks() {
-    try {
-      this.api.getBooks().subscribe(data => {
-        console.log('DATAAA', data);
-        this.books = data;
-        this.book = this.books[1];
+  // getBooks() {
+  //   try {
+  //     this.api.getBooks().subscribe(data => {
+  //       console.log('DATAAA', data);
+  //       this.books = data;
+  //       this.book = this.books[1];
 
-        console.log(this.book.cover);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //       console.log(this.book.cover);
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 }

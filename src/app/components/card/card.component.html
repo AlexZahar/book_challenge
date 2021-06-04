@@ -1,10 +1,7 @@
 <div class="card">
   <div class="card__wrapper row">
     <div class="card__image col-1-of-2">
-      <img
-        src="http://localhost:4200/assets/covers/gulliver2.jpg"
-        alt="{{ book.title }} Cover image"
-      />
+      <img src="{{ book.cover }}" alt="{{ book.title }} Cover image" />
     </div>
     <div class="card__preview col-1-of-2">
       <h1 class="card__preview-title">
@@ -17,12 +14,7 @@
         {{ book.releaseDate }}
       </h5>
       <p class="card__preview-synopsis">{{ book.synopsis }}</p>
-      <!-- <p class="card__preview-release">{{ book.releaseDate }}</p> -->
     </div>
   </div>
+  <!-- <button class="card__menu-button">MENU</button> -->
 </div>
-
-<!-- <p *ngFor="let book of books"> -->
-<!-- {{ book.author }} -->
-<!-- {{ book.cover }} -->
-<!-- </p> -->

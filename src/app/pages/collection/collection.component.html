@@ -1,1 +1,3 @@
-<app-card></app-card>
+<div class="card__collection">
+  <app-card *ngFor="let book of books; let i = index" [book]="book"></app-card>
+</div>
