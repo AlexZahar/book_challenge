@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
       this.api.getUsers().subscribe(data => {
         console.log(data);
         this.users = data;
-        this.user = this.users[0];
+        this.user = this.users[2];
       });
     } catch (error) {
       console.log(error);

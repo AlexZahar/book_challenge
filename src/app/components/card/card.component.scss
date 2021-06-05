@@ -52,26 +52,24 @@
     position: absolute;
     width: 7rem;
     margin-left: -2rem;
-    ul {
-      // background-color: blue;
-    }
 
     li {
-      &:first-child {
-        color: red;
-      }
-      &:last-child {
-        color: black;
-      }
-      // background-color: red;
+      // color: black;
       font-size: 1.4rem;
       list-style: none;
+      .red {
+        color: red;
+      }
+      .black {
+        color: black;
+      }
       &:hover {
         opacity: 0.8;
       }
     }
   }
 }
+
 .active {
   display: block;
 }

@@ -12,7 +12,7 @@
       <p class="card__preview-synopsis">{{ book.synopsis }}</p>
     </div>
   </div>
-  <div class="card__menu-button">
+  <div class="card__menu-button" *ngIf="isCardAction">
     <img
       class="card__menu-button"
       src="../../../assets/icons/cogwheel.svg"
@@ -27,7 +27,7 @@
         *ngFor="let option of menuOptions; let i = index"
         (click)="selectAction(i)"
       >
-        {{ option }}
+        <span> {{ option }}</span>
       </li>
     </ul>
     <!-- <select>
