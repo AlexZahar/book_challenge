@@ -10,18 +10,18 @@
       alt="Right Angle"
     />
     <ul class="nav__list">
-      <li class="nav__listitem">
+      <li routerLinkActive="nav__listitem-active" class="nav__listitem">
         <a routerLink="/collection"
           ><img
-            class="icon nav__listitem-active"
+            class="icon"
             src="http://localhost:4200/assets/icons/collection.svg"
             alt=""
           />
           <p>Collection</p></a
         >
       </li>
-      <li class="nav__listitem">
-        <a href="#">
+      <li class="nav__listitem" routerLinkActive="nav__listitem-active">
+        <a routerLink="/settings">
           <img
             class="icon"
             src="http://localhost:4200/assets/icons/cogwheel.svg"
@@ -30,8 +30,8 @@
           <p>Settings</p></a
         >
       </li>
-      <li class="nav__listitem">
-        <a href="#"
+      <li class="nav__listitem" routerLinkActive="nav__listitem-active">
+        <a routerLink="/editor"
           ><img
             class="icon"
             src="http://localhost:4200/assets/icons/add-book.svg"
