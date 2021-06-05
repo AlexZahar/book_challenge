@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../core/interfaces/user';
 import { HttpClient } from '@angular/common/http';
-// import * as userData from '../../core/data/signed-in-user.json';
-// import { Observable } from 'rxjs';
+import { ApiService } from '../../core/services/api.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  // loggedUser: User = (userData as any).default.users[2];
   users: any = [];
   user: User;
   avatar: string = '';
@@ -19,7 +17,7 @@ export class HeaderComponent implements OnInit {
     avatarUrl: 'assets/avatars/batman-avatar.svg',
     role: 'read-write',
   };
-  constructor(private httpClient: HttpClient) {}
+  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -27,7 +25,7 @@ export class HeaderComponent implements OnInit {
 
   getUsers() {
     try {
-      this.httpClient.get('assets/data/users.json').subscribe(data => {
+      this.api.getUsers().subscribe(data => {
         console.log(data);
         this.users = data;
         this.user = this.users[0];

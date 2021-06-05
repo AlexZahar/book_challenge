@@ -3,6 +3,7 @@ import { Book } from '../interfaces/book';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -15,5 +16,8 @@ export class ApiService {
     return this.http.get<Book[]>(
       `${environment.apiBaseUrl}/assets/api/books/books.json`
     );
+  }
+  getUsers() {
+    return this.http.get('assets/data/users.json');
   }
 }

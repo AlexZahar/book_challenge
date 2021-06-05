@@ -28,8 +28,12 @@ export class CollectionComponent implements OnInit {
       console.log(error);
     }
   }
+
+  /**
+   * Edit and delete books
+   * @param actionObject
+   */
   onActionSelected(actionObject: { action: string; book: Book }) {
-    console.log('ssss', actionObject);
     try {
       const book = actionObject?.book;
       console.log(book.title);
@@ -49,6 +53,11 @@ export class CollectionComponent implements OnInit {
       console.log(error);
     }
   }
+
+  /**
+   * Filter books array based on user's search input
+   * @param searchData
+   */
   onSearch(searchData: string) {
     if (searchData) {
       this.filteredBooks = this.books;
