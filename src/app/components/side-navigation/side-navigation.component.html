@@ -1,7 +1,10 @@
 <nav class="nav">
-  <div class="nav__wrapper" [ngClass]="expanded ? 'nav-active' : 'nav-closed'">
+  <div
+    class="nav__wrapper"
+    [ngClass]="expanded ? 'nav-expanded' : 'nav-closed'"
+  >
     <img
-      class="icon nav__expand"
+      class="nav__expand"
       (click)="toggle()"
       src="http://localhost:4200/assets/icons/right-angle.svg"
       alt="Right Angle"

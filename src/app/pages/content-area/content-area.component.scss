@@ -4,3 +4,11 @@
   width: 100%;
   margin: 0 auto;
 }
+@media only screen and (max-width: 490px) {
+  .content-area {
+    max-width: 300px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+}

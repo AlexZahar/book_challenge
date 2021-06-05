@@ -1,3 +1,5 @@
+@import '../../../styles/abstracts/mixins';
+@import '../../../styles/abstracts/variables';
 .nav {
   //   margin-top: 200px;
   height: 100%;
@@ -7,9 +9,9 @@
   z-index: 2;
   //   box-shadow: 0px 0px 10px black;
   &__expand {
-    width: 5rem;
+    width: 3rem;
     // height: 3rem;
-    fill: green;
+
     background-color: white;
     box-shadow: 0px 0px 10px black;
     border-radius: 50%;
@@ -20,11 +22,16 @@
     cursor: pointer;
     transform: rotatez(-180deg);
     transition: transform 200ms ease-in-out;
+    margin-bottom: 29px;
     &:hover {
-      fill: green;
+      background-color: $color-primary-dark;
     }
   }
+  &-expanded {
+    width: 100px;
+  }
   &__list {
+    margin-top: 50px;
     display: block;
     height: 20px;
     text-align: center;
@@ -35,7 +42,7 @@
       border-left: 6px solid transparent;
       cursor: pointer;
       &:hover {
-        background-color: green;
+        background-color: $color-primary-light-hover;
       }
       a {
         // float: right;
@@ -44,7 +51,7 @@
         text-decoration: none;
         gap: 1rem;
         vertical-align: middle;
-        color: red;
+        color: $color-black;
       }
       p {
         // vertical-align: middle;
@@ -54,17 +61,21 @@
         // float: right;
       }
     }
+    &-active {
+      // background-color: $color-primary-light-hover;
+      border-left: 8px solid red;
+    }
   }
   .icon {
-    display: inline-block;
+    // display: inline-block;
     width: 3rem;
-    fill: red;
-    // margin-top: 200px;
+    // fill: red;
+
     // background-color: red;
-    color: green;
+    // color: green;
     &-active {
       background-color: red;
-      border-left: 6px solid blue;
+      border-left: 8px solid red;
     }
     img,
     p {
