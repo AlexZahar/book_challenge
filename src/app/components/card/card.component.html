@@ -12,5 +12,27 @@
       <p class="card__preview-synopsis">{{ book.synopsis }}</p>
     </div>
   </div>
-  <!-- <button class="card__menu-button">MENU</button> -->
+  <div class="card__menu-button">
+    <img
+      class="card__menu-button"
+      src="../../../assets/icons/cogwheel.svg"
+      alt=""
+      (click)="toggleDropdown()"
+    />
+    <ul
+      class="card__dropdown-menu"
+      [ngClass]="isOpened ? 'active' : 'inactive'"
+    >
+      <li
+        *ngFor="let option of menuOptions; let i = index"
+        (click)="selectAction(i)"
+      >
+        {{ option }}
+      </li>
+    </ul>
+    <!-- <select>
+      <option>Menu</option>
+      <option *ngFor="let option of menuOptions">{{ option }}</option>
+    </select> -->
+  </div>
 </div>

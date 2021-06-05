@@ -39,11 +39,45 @@
   }
   &__menu-button {
     position: absolute;
+    width: 2rem;
     top: 1rem;
     right: 1rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__dropdown-menu {
+    // width: 60px;
+    margin-top: 3rem;
+    position: absolute;
+    width: 7rem;
+    margin-left: -2rem;
+    ul {
+      // background-color: blue;
+    }
+
+    li {
+      &:first-child {
+        color: red;
+      }
+      &:last-child {
+        color: black;
+      }
+      // background-color: red;
+      font-size: 1.4rem;
+      list-style: none;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
-
+.active {
+  display: block;
+}
+.inactive {
+  display: none;
+}
 @media only screen and (max-width: 499px) {
   .card {
     // max-width: 40rem;

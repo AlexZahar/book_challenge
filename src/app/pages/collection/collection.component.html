@@ -8,6 +8,7 @@
     <app-card
       *ngFor="let book of filteredBooks; let i = index"
       [book]="book"
+      (selectedAction)="onActionSelected($event)"
     ></app-card>
   </div>
 </div>
