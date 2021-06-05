@@ -54,15 +54,9 @@
     margin-left: -2rem;
 
     li {
-      // color: black;
+      color: black;
       font-size: 1.4rem;
       list-style: none;
-      .red {
-        color: red;
-      }
-      .black {
-        color: black;
-      }
       &:hover {
         opacity: 0.8;
       }
