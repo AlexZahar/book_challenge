@@ -28,12 +28,13 @@
   &__preview {
     display: inline-block;
     vertical-align: top;
-    width: 48%;
+    width: 40%;
     margin-left: 2rem;
 
     &-synopsis,
     &-release {
       padding-top: 1rem;
+      width: 100%;
     }
   }
   &__menu-button {
@@ -59,7 +60,8 @@
     }
     &__preview {
       display: block;
-      width: 100%;
+      // max-width: 200px;
+      width: 80%;
       padding: 1rem;
       margin: 0 auto;
     }
