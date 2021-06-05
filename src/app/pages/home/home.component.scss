@@ -1,0 +1,17 @@
+.home {
+  width: 100%;
+  &__header-main {
+    width: 100%;
+    text-align: center;
+  }
+  &__nav-side {
+    max-width: 70px;
+    position: fixed;
+    height: 100%;
+  }
+  &__content-area {
+    display: block;
+    width: 70%;
+    margin: 100px auto;
+  }
+}

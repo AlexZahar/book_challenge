@@ -1,5 +1,13 @@
 <div class="card__collection">
-  <app-content-header (searchCriteria)="onSearch($event)"></app-content-header>
-  
-  <app-card *ngFor="let book of filteredBooks; let i = index" [book]="book"></app-card>
+  <div class="card__collection-header">
+    <app-content-header
+      (searchCriteria)="onSearch($event)"
+    ></app-content-header>
+  </div>
+  <div class="card__collection-books">
+    <app-card
+      *ngFor="let book of filteredBooks; let i = index"
+      [book]="book"
+    ></app-card>
+  </div>
 </div>

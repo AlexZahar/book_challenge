@@ -1,3 +1,42 @@
-<header class="header" id="header">
-  <div class="header__toggle"></div>
-</header>
+<nav class="nav">
+  <div class="nav__wrapper" [ngClass]="expanded ? 'nav-active' : 'nav-closed'">
+    <img
+      class="icon nav__expand"
+      (click)="toggle()"
+      src="http://localhost:4200/assets/icons/right-angle.svg"
+      alt="Right Angle"
+    />
+    <ul class="nav__list">
+      <li class="nav__listitem">
+        <a href="#"
+          ><img
+            class="icon nav__listitem-active"
+            src="http://localhost:4200/assets/icons/collection.svg"
+            alt=""
+          />
+          <p>Collection</p></a
+        >
+      </li>
+      <li class="nav__listitem">
+        <a href="#">
+          <img
+            class="icon"
+            src="http://localhost:4200/assets/icons/cogwheel.svg"
+            alt=""
+          />
+          <p>Settings</p></a
+        >
+      </li>
+      <li class="nav__listitem">
+        <a href="#"
+          ><img
+            class="icon"
+            src="http://localhost:4200/assets/icons/add-book.svg"
+            alt=""
+          />
+          <p>Wizzard</p></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

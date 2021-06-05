@@ -2,23 +2,27 @@
 @import '../../../styles/abstracts/variables';
 
 .header {
-  //   position: fixed;
-  //   width: 70%;
-  //   bottom: auto;
+  margin: 0 auto;
+
   z-index: $z-index-header;
   &__wrapper {
     display: block;
     // background-color: greenyellow;
     height: 6rem;
-    position: relative;
-    //   @include sticky;
+    // position: fixed;
+    width: 100%;
     input[type='search'] {
-      display: inline;
-      right: 1rem;
+      display: inline-block;
+      right: 2rem;
+
       position: absolute;
-      top: 50%;
+      //   top: 50%;
+      vertical-align: middle;
       font-size: medium;
-      transform: translateY(-50%);
+      margin-top: 20px;
+      //   float: right;
+      //   margin: 0 auto;
+      //   transform: translateY(-50%);
       border-radius: 5px;
       border-color: rgb(110, 110, 110);
     }
