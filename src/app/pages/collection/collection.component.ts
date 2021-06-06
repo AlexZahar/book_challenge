@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/core/services/api.service';
 import { ItemService } from 'src/app/core/services/item.service';
 import { Book } from 'src/app/core/interfaces/book';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-collection',
@@ -12,7 +13,12 @@ export class CollectionComponent implements OnInit {
   books: Book[] = [];
   filteredBooks: Book[] = [];
 
-  constructor(private api: ApiService, private action: ItemService) {}
+  constructor(
+    private api: ApiService,
+    private action: ItemService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
     this.getBooks();
     console.log('on init', this.books);
@@ -44,6 +50,10 @@ export class CollectionComponent implements OnInit {
           }
           break;
         case 'edit':
+          this.router.navigate(
+            ['edit']
+            // { relativeTo: this.route }
+          );
           console.log('EDIT', actionObject.book._id);
           break;
         default:

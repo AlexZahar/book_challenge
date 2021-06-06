@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   users: any = [];
   user: User;
   avatar: string = '';
+  isUser = false;
   newUser = {
     _id: '05',
     username: 'Phillip',
@@ -29,6 +30,7 @@ export class HeaderComponent implements OnInit {
         console.log(data);
         this.users = data;
         this.user = this.users[2];
+        this.isUser = true;
       });
     } catch (error) {
       console.log(error);
