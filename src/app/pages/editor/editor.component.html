@@ -1,5 +1,13 @@
 <div class="editor" *ngIf="bookToEdit">
   <app-card [book]="bookToEdit"></app-card>
+  <!-- <button
+    class="btn btn--preview"
+    type="button"
+    (click)="updateCardPreview()"
+    [disabled]="!form.valid"
+  >
+    Preview Changes
+  </button> -->
   <div class="editor__wrapper">
     <form (ngSubmit)="onSubmit()" #form="ngForm">
       <!-- <div class="editor__img"></div> -->
@@ -54,7 +62,7 @@
         <div class="editor__metadata-synopsis">
           <label for="text">* Synopsis (250 characters)</label>
           <textarea
-            placeholder="Passage of the book which will be displayed as a book preview. "
+            placeholder="Passage of the book which will be displayed as a preview. "
             required
             rows="5"
             type="text"
@@ -64,8 +72,8 @@
           ></textarea>
         </div>
       </div>
-      <div class="editor__book-actions radio">
-        <div class="editor__book-actions--delete">
+      <div class="editor__book-actions">
+        <div class="editor__book-actions--delete editor__radio">
           <h3>Deletable</h3>
           <div *ngFor="let action of actionsOptions">
             <label for="">
@@ -80,7 +88,7 @@
             </label>
           </div>
         </div>
-        <div class="editor__book-actions--edit">
+        <div class="editor__book-actions--edit editor__radio">
           <h3>Editable</h3>
           <div *ngFor="let action of actionsOptions">
             <label for="">
@@ -96,7 +104,16 @@
           </div>
         </div>
       </div>
-      <button type="submit" [disabled]="!form.valid">Save</button>
+      <button class="btn btn--save" type="submit" [disabled]="!form.valid">
+        Save Changes
+      </button>
+      <button
+        class="btn btn--back"
+        type="button"
+        (click)="returnToCollection()"
+      >
+        Cancel
+      </button>
     </form>
   </div>
 </div>

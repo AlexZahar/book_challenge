@@ -1,5 +1,3 @@
-
-
 // Abstracts
 @import './styles/abstracts/variables';
 @import './styles/abstracts/mixins';
@@ -11,4 +9,7 @@
 @import './styles/base/base';
 
 // Layout
-@import './styles/layout/grid'
+@import './styles/layout/grid';
+
+// Components
+@import './styles/components/button';

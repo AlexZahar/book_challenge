@@ -1,4 +1,5 @@
 .editor {
+  padding-top: 4rem;
   input[type='text'],
   select,
   textarea {
@@ -9,6 +10,18 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: inherit;
+    line-height: 2.6rem;
+    letter-spacing: 1px;
+  }
+
+  &__radio {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-left: 6rem;
+    }
   }
   label {
     font-size: 1.4rem;

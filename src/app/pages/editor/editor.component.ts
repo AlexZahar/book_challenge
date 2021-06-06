@@ -31,6 +31,21 @@ export class EditorComponent implements OnInit {
   }
 
   // }
+  updateCardPreview() {
+    this.editedBook = {
+      title: this.bookEditForm.value.title,
+      cover: this.bookEditForm.value.cover,
+      author: this.bookEditForm.value.author,
+      synopsis: this.bookEditForm.value.synopsis,
+      genres: this.bookEditForm.value.genres,
+      deletable: this.bookEditForm.value.deletable,
+      editable: this.bookEditForm.value.editable,
+    };
+    this.action.updateBook(this.books, this.editedBook);
+  }
+  returnToCollection() {
+    this.router.navigate(['collections']);
+  }
   onSubmit() {
     this.editedBook = {
       _id: this.book._id,
