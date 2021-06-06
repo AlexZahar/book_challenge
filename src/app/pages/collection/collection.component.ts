@@ -26,6 +26,7 @@ export class CollectionComponent implements OnInit {
   getBooks() {
     try {
       if (this.books.length) {
+        console.log(this.books);
         this.filteredBooks = this.books;
         return;
       }
