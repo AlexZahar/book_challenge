@@ -31,8 +31,10 @@ export class EditorComponent implements OnInit {
   }
 
   // }
-  updateCardPreview() {
+  // Live update card
+  updateCardPreview(event: any) {
     this.editedBook = {
+      _id: this.book._id,
       title: this.bookEditForm.value.title,
       cover: this.bookEditForm.value.cover,
       author: this.bookEditForm.value.author,
@@ -41,7 +43,7 @@ export class EditorComponent implements OnInit {
       deletable: this.bookEditForm.value.deletable,
       editable: this.bookEditForm.value.editable,
     };
-    this.action.updateBook(this.books, this.editedBook);
+    this.bookToEdit = this.editedBook;
   }
   returnToCollection() {
     this.router.navigate(['collections']);

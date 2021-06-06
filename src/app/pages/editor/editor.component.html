@@ -1,20 +1,12 @@
 <div class="editor" *ngIf="bookToEdit">
   <app-card [book]="bookToEdit"></app-card>
-  <!-- <button
-    class="btn btn--preview"
-    type="button"
-    (click)="updateCardPreview()"
-    [disabled]="!form.valid"
-  >
-    Preview Changes
-  </button> -->
   <div class="editor__wrapper">
     <form (ngSubmit)="onSubmit()" #form="ngForm">
-      <!-- <div class="editor__img"></div> -->
       <div class="editor__metadata">
         <div class="editor__metadata-title">
           <label for="text">* Cover Image URL Address</label>
           <input
+            (keyup)="updateCardPreview($event)"
             placeholder="assets/covers/image_name.jpg"
             required
             type="text"
@@ -30,6 +22,7 @@
           <label for="text">* Title</label>
 
           <input
+            (keyup)="updateCardPreview($event)"
             required
             placeholder="The fascinating world of programming"
             type="text"
@@ -44,6 +37,7 @@
         <div class="editor__metadata-author">
           <label for="text">Author</label>
           <input
+            (keyup)="updateCardPreview($event)"
             placeholder="John Doe"
             type="text"
             [ngModel]="bookToEdit.author"
@@ -53,6 +47,7 @@
         <div class="editor__metadata-genres">
           <label for="text">Genres</label>
           <input
+            (keyup)="updateCardPreview($event)"
             placeholder="Fiction, Literature, etc..."
             type="text"
             [ngModel]="bookToEdit.genres"
@@ -62,6 +57,7 @@
         <div class="editor__metadata-synopsis">
           <label for="text">* Synopsis (250 characters)</label>
           <textarea
+            (keyup)="updateCardPreview($event)"
             placeholder="Passage of the book which will be displayed as a preview. "
             required
             rows="5"
