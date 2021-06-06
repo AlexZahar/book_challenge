@@ -13,6 +13,7 @@ export class EditorComponent implements OnInit {
   @ViewChild('form') bookEditForm: NgForm;
   books: Book[] = this.action.books;
   book: any;
+  bookToEdit: Book;
   actionsOptions: [true, false] = [true, false];
   editedBook: Book;
   constructor(
@@ -22,17 +23,15 @@ export class EditorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('Log from editor', this.books);
+    this.bookToEdit = this.action.bookToEdit;
+    console.log('bookToEdit', this.bookToEdit);
     this.book = {
       _id: this.route.snapshot.params['id'],
     };
   }
-  // onSubmit(form: NgForm) {
-  //   console.log('Submitted', form);
+
   // }
   onSubmit() {
-    // console.log(this.bookEditForm);
-    // console.log(this.bookEditForm.value.title);
     this.editedBook = {
       _id: this.book._id,
       title: this.bookEditForm.value.title,

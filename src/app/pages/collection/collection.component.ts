@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CollectionComponent implements OnInit {
   books: Book[] = this.action.books;
   filteredBooks: Book[] = [];
+  bookToEdit: Book;
 
   constructor(
     private api: ApiService,
@@ -58,6 +59,7 @@ export class CollectionComponent implements OnInit {
           }
           break;
         case 'edit':
+          this.action.bookToEdit = book;
           this.router.navigate(
             [`edit/${book._id}`]
             // { relativeTo: this.route }

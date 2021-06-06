@@ -6,6 +6,7 @@ import { Book } from '../interfaces/book';
 })
 export class ItemService {
   public books: any = [];
+  public bookToEdit: Book;
   constructor() {}
 
   deleteBook(array: Book[], elem: Book) {
