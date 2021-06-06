@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Book } from '../../core/interfaces/book';
+import { Route } from '@angular/compiler/src/core';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -11,11 +13,12 @@ export class CardComponent implements OnInit {
   @Output() selectedAction = new EventEmitter<{ action: string; book: Book }>();
   actionObject: { action: string; book: Book };
   isCardAction = false;
+  currentRoute: any;
   menuOptions: any[] = [];
   selectedOption = '';
   isOpened = false;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.checkBookOptions();
@@ -32,6 +35,10 @@ export class CardComponent implements OnInit {
     }
   }
   checkBookOptions() {
+    this.route.url.subscribe(path => {
+      this.currentRoute = path[0].path;
+    });
+
     this.book.deletable || this.book.editable
       ? (this.isCardAction = true)
       : (this.isCardAction = false);

@@ -1,32 +1,67 @@
-<div class="editor">
+<div class="editor" *ngIf="bookToEdit">
+  <app-card [book]="bookToEdit"></app-card>
   <div class="editor__wrapper">
     <form (ngSubmit)="onSubmit()" #form="ngForm">
       <!-- <div class="editor__img"></div> -->
       <div class="editor__metadata">
         <div class="editor__metadata-title">
-          <label for="text">Title</label>
+          <label for="text">* Cover Image URL Address</label>
+          <input
+            placeholder="assets/covers/image_name.jpg"
+            required
+            type="text"
+            [ngModel]="bookToEdit.cover"
+            name="cover"
+            #title="ngModel"
+          />
+          <span class="editor__help-block" *ngIf="!title.valid && title.touched"
+            >Please add a cover image url</span
+          >
+        </div>
+        <div class="editor__metadata-title">
+          <label for="text">* Title</label>
+
           <input
             required
+            placeholder="The fascinating world of programming"
             type="text"
             [ngModel]="bookToEdit.title"
             name="title"
             #title="ngModel"
           />
           <span class="editor__help-block" *ngIf="!title.valid && title.touched"
-            >Title can't be empty</span
+            >Please add a book title</span
           >
         </div>
         <div class="editor__metadata-author">
-          <input required type="text" ngModel name="author" />
           <label for="text">Author</label>
-        </div>
-        <div class="editor__metadata-synopsis">
-          <input required type="text" ngModel name="synopsis" />
-          <label for="text">Synopsis</label>
+          <input
+            placeholder="John Doe"
+            type="text"
+            [ngModel]="bookToEdit.author"
+            name="author"
+          />
         </div>
         <div class="editor__metadata-genres">
-          <input required type="text" ngModel name="genres" />
           <label for="text">Genres</label>
+          <input
+            placeholder="Fiction, Literature, etc..."
+            type="text"
+            [ngModel]="bookToEdit.genres"
+            name="genres"
+          />
+        </div>
+        <div class="editor__metadata-synopsis">
+          <label for="text">* Synopsis (250 characters)</label>
+          <textarea
+            placeholder="Passage of the book which will be displayed as a book preview. "
+            required
+            rows="5"
+            type="text"
+            maxlength="240"
+            [ngModel]="bookToEdit.synopsis"
+            name="synopsis"
+          ></textarea>
         </div>
       </div>
       <div class="editor__book-actions radio">
@@ -38,7 +73,7 @@
                 required
                 type="radio"
                 name="deletable"
-                ngModel
+                [ngModel]="bookToEdit.deletable"
                 [value]="action"
               />
               {{ action }}
@@ -53,7 +88,7 @@
                 required
                 type="radio"
                 name="editable"
-                ngModel
+                [ngModel]="bookToEdit.editable"
                 [value]="action"
               />
               {{ action }}
@@ -65,4 +100,3 @@
     </form>
   </div>
 </div>
-<p>{{ book._id }}</p>

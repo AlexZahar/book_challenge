@@ -35,6 +35,7 @@ export class EditorComponent implements OnInit {
     this.editedBook = {
       _id: this.book._id,
       title: this.bookEditForm.value.title,
+      cover: this.bookEditForm.value.cover,
       author: this.bookEditForm.value.author,
       synopsis: this.bookEditForm.value.synopsis,
       genres: this.bookEditForm.value.genres,
