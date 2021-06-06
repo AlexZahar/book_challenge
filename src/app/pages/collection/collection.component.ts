@@ -17,20 +17,15 @@ export class CollectionComponent implements OnInit {
   constructor(
     private api: ApiService,
     private action: ItemService,
-    private router: Router,
-    private route: ActivatedRoute
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.getBooks();
-    console.log('on init this books', this.books);
-    console.log('on init this filtered books', this.filteredBooks);
   }
 
   getBooks() {
-    console.log('On fetch', this.books);
     try {
       if (this.books.length) {
-        console.log('if runnign');
         this.filteredBooks = this.books;
         return;
       }

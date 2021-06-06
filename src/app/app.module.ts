@@ -14,6 +14,7 @@ import { CardComponent } from './components/card/card.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { WizzardComponent } from './pages/wizzard/wizzard.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
     ContentAreaComponent,
     CardComponent,
     SearchBoxComponent,
+    WizzardComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],

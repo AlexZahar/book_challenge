@@ -1,0 +1,33 @@
+.editor {
+  padding-top: 4rem;
+  input[type='text'],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0.5rem 0 2rem 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 2.6rem;
+    letter-spacing: 1px;
+  }
+
+  &__radio {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-left: 6rem;
+    }
+  }
+  label {
+    font-size: 1.4rem;
+    padding-bottom: -1rem;
+  }
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+}

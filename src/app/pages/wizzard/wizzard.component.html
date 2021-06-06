@@ -1,6 +1,7 @@
-<div class="editor" *ngIf="bookToEdit">
+<div class="editor">
   <div class="editor__nav">
-    <h1>Book Editor</h1>
+    <h1>Wizzard</h1>
+    <h2>Create your own book record</h2>
   </div>
   <app-card [book]="bookToEdit"></app-card>
   <div class="editor__wrapper">
@@ -13,8 +14,8 @@
             placeholder="assets/covers/image_name.jpg"
             required
             type="text"
-            [ngModel]="bookToEdit.cover"
             name="cover"
+            [(ngModel)]="bookToEdit.cover"
             #title="ngModel"
           />
           <span class="editor__help-block" *ngIf="!title.valid && title.touched"
@@ -27,9 +28,9 @@
           <input
             (keyup)="updateCardPreview($event)"
             required
+            ngModel
             placeholder="The fascinating world of programming"
             type="text"
-            [ngModel]="bookToEdit.title"
             name="title"
             #title="ngModel"
           />
@@ -40,33 +41,33 @@
         <div class="editor__metadata-author">
           <label for="text">Author</label>
           <input
+            ngModel
             (keyup)="updateCardPreview($event)"
             placeholder="John Doe"
             type="text"
-            [ngModel]="bookToEdit.author"
             name="author"
           />
         </div>
         <div class="editor__metadata-genres">
           <label for="text">Genres</label>
           <input
+            ngModel
             (keyup)="updateCardPreview($event)"
             placeholder="Fiction, Literature, etc..."
             type="text"
-            [ngModel]="bookToEdit.genres"
             name="genres"
           />
         </div>
         <div class="editor__metadata-synopsis">
           <label for="text">* Synopsis (250 characters)</label>
           <textarea
+            ngModel
             (keyup)="updateCardPreview($event)"
             placeholder="Passage of the book which will be displayed as a preview. "
             required
             rows="5"
             type="text"
             maxlength="240"
-            [ngModel]="bookToEdit.synopsis"
             name="synopsis"
           ></textarea>
         </div>
@@ -76,13 +77,7 @@
           <h3>Deletable</h3>
           <div *ngFor="let action of actionsOptions">
             <label for="">
-              <input
-                required
-                type="radio"
-                name="deletable"
-                [ngModel]="bookToEdit.deletable"
-                [value]="action"
-              />
+              <input required type="radio" name="deletable" [value]="action" />
               {{ action }}
             </label>
           </div>
@@ -91,20 +86,14 @@
           <h3>Editable</h3>
           <div *ngFor="let action of actionsOptions">
             <label for="">
-              <input
-                required
-                type="radio"
-                name="editable"
-                [ngModel]="bookToEdit.editable"
-                [value]="action"
-              />
+              <input required type="radio" name="editable" [value]="action" />
               {{ action }}
             </label>
           </div>
         </div>
       </div>
       <button class="btn btn--save" type="submit" [disabled]="!form.valid">
-        Save Changes
+        Create Record
       </button>
       <button
         class="btn btn--back"

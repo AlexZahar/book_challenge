@@ -44,7 +44,8 @@
       border-left: 6px solid transparent;
       cursor: pointer;
       &:hover {
-        background-color: $color-primary-light-hover;
+        background-color: $color-primary;
+        opacity: 0.7;
       }
       a {
         // float: right;
