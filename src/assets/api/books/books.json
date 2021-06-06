@@ -16,7 +16,7 @@
     "title": "Gulliver's Travels",
     "cover": "assets/covers/gulliver2.jpg",
     "genres": ["Fantasy", "Childrens", "Adventure"],
-    "synopsis": "During his first voyage, Gulliver is washed ashore after a shipwreck and finds himself a prisoner of a race of tiny people, less than 6 inches (15 cm) tall, who are inhabitants of the island country of Lilliput.",
+    "synopsis": "During his first voyage, Gulliver is washed ashore after a shipwreck and finds himself a prisoner of a race of tiny people, less than 6 inches (15 cm) tall, who are inhabitants of the island country of Lilliput...",
     "releaseDate": "October 28, 1726",
     "editable": true,
     "deletable": false
@@ -27,7 +27,7 @@
     "title": "David Copperfield",
     "cover": "assets/covers/copperfield1.jpg",
     "genres": ["History", "Adventure"],
-    "synopsis": "The story follows the life of David Copperfield from childhood to maturity. David was born in Blunderstone, Suffolk, England, six months after the death of his father. David spends his early years in relative happiness with his loving, childish mother and their kindly housekeeper, Clara Peggotty.",
+    "synopsis": "The story follows the life of David Copperfield from childhood to maturity. David was born in Blunderstone, Suffolk, England, six months after the death of his father. David spends his early years in relative happiness with his loving...",
     "releaseDate": "May 11, 1849",
     "editable": false,
     "deletable": true
@@ -38,7 +38,7 @@
     "title": "Harry Potter",
     "cover": "assets/covers/azkaban1.jpg",
     "genres": ["Literature", "Fiction"],
-    "synopsis": "Harry is back at the Dursleys' for the summer holidays, where he sees on television that a convict named Sirius Black has escaped from prison. After the Dursley's Aunt Marge insults Harry and his parents, Harry accidentally inflates her, then runs away from home, fearing expulsion from school. ",
+    "synopsis": "Harry is back at the Dursleys' for the summer holidays, where he sees on television that a convict named Sirius Black has escaped from prison. After the Dursley's Aunt Marge insults Harry and his parents... ",
     "releaseDate": "July 8, 1999",
     "editable": false,
     "deletable": false
@@ -49,7 +49,7 @@
     "title": "The Great Gatsby",
     "cover": "assets/covers/gatsby.jpg",
     "genres": ["Fantasy", "Childrens", "Adventure"],
-    "synopsis": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby and Gatsby's obsession to reunite with his former lover, Daisy Buchanan.",
+    "synopsis": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, the novel depicts narrator Nick Carraway's interactions with mysterious millionaire Jay Gatsby...",
     "releaseDate": "April 10, 1925",
     "editable": true,
     "deletable": false
@@ -57,10 +57,10 @@
   {
     "_id": "0006",
     "author": "Alan Dean Foster",
-    "title": "Star Wars: The Force Awakens",
+    "title": "Star Wars: The Force",
     "cover": "assets/covers/starwars.jpg",
     "genres": ["History", "Adventure"],
-    "synopsis": "The story follows the life of David Copperfield from childhood to maturity. David was born in Blunderstone, Suffolk, England, six months after the death of his father. David spends his early years in relative happiness with his loving, childish mother and their kindly housekeeper, Clara Peggotty.",
+    "synopsis": "The story follows the life of David Copperfield from childhood to maturity. David was born in Blunderstone, Suffolk, England, six months after the death of his father.",
     "releaseDate": "December 18, 2015",
     "editable": true,
     "deletable": true

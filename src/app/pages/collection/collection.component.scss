@@ -1,3 +1,4 @@
+@import '../../../styles/abstracts/variables';
 .card__collection {
   // max-width: 600px;
   // width: 100%;
@@ -17,5 +18,20 @@
   &-books {
     display: block;
     // margin-top: 30px;
+  }
+  &-pagination {
+    display: block;
+    text-align: center;
+  }
+}
+.my-pagination ::ng-deep .ngx-pagination {
+  margin: 0 auto;
+  // display: inline-block;
+  // max-width: 290px;
+  // background: red;wi
+  font-size: 1.5rem;
+  .current {
+    background-color: $color-primary;
+    color: $color-black;
   }
 }

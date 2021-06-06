@@ -15,6 +15,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { WizzardComponent } from './pages/wizzard/wizzard.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import { WizzardComponent } from './pages/wizzard/wizzard.component';
     SearchBoxComponent,
     WizzardComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

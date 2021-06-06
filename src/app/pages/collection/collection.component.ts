@@ -13,6 +13,7 @@ export class CollectionComponent implements OnInit {
   books: Book[] = this.action.books;
   filteredBooks: Book[] = [];
   bookToEdit: Book;
+  p: number = 1;
 
   constructor(
     private api: ApiService,

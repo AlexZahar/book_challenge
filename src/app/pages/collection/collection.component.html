@@ -6,9 +6,19 @@
   </div>
   <div class="card__collection-books">
     <app-card
-      *ngFor="let book of filteredBooks; let i = index"
+      *ngFor="
+        let book of filteredBooks
+          | paginate: { itemsPerPage: 3, currentPage: p };
+        let i = index
+      "
       [book]="book"
       (selectedAction)="onActionSelected($event)"
     ></app-card>
+  </div>
+  <div class="card__collection-pagination">
+    <pagination-controls
+      class="my-pagination"
+      (pageChange)="p = $event"
+    ></pagination-controls>
   </div>
 </div>
