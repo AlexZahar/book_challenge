@@ -5,6 +5,7 @@ import { Book } from '../interfaces/book';
   providedIn: 'root',
 })
 export class ItemService {
+  public books: any = [];
   constructor() {}
 
   deleteBook(array: Book[], elem: Book) {
@@ -18,6 +19,15 @@ export class ItemService {
           1
         )
       );
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  updateBook(array: Book[], elem: Book) {
+    try {
+      // array[array.findIndex(el => el._id === elem._id)] = elem;
+      let foundIndex = array.findIndex(x => x._id == elem._id);
+      array[foundIndex] = elem;
     } catch (error) {
       console.log(error);
     }

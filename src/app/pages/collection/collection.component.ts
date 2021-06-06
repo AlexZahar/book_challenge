@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./collection.component.scss'],
 })
 export class CollectionComponent implements OnInit {
-  books: Book[] = [];
+  books: Book[] = this.action.books;
   filteredBooks: Book[] = [];
 
   constructor(
@@ -21,14 +21,22 @@ export class CollectionComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.getBooks();
-    console.log('on init', this.books);
+    console.log('on init this books', this.books);
+    console.log('on init this filtered books', this.filteredBooks);
   }
 
   getBooks() {
+    console.log('On fetch', this.books);
     try {
+      if (this.books.length) {
+        console.log('if runnign');
+        this.filteredBooks = this.books;
+        return;
+      }
       this.api.getBooks().subscribe(data => {
         this.books = data;
         this.filteredBooks = this.books;
+        this.action.books = this.books;
       });
     } catch (error) {
       console.log(error);

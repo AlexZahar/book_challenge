@@ -1,7 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Book } from 'src/app/core/interfaces/book';
+import { ItemService } from 'src/app/core/services/item.service';
 
 @Component({
   selector: 'app-editor',
@@ -10,12 +11,18 @@ import { Book } from 'src/app/core/interfaces/book';
 })
 export class EditorComponent implements OnInit {
   @ViewChild('form') bookEditForm: NgForm;
+  books: Book[] = this.action.books;
   book: any;
   actionsOptions: [true, false] = [true, false];
   editedBook: Book;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private action: ItemService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    console.log('Log from editor', this.books);
     this.book = {
       _id: this.route.snapshot.params['id'],
     };
@@ -24,9 +31,10 @@ export class EditorComponent implements OnInit {
   //   console.log('Submitted', form);
   // }
   onSubmit() {
-    console.log(this.bookEditForm);
-    console.log(this.bookEditForm.value.title);
+    // console.log(this.bookEditForm);
+    // console.log(this.bookEditForm.value.title);
     this.editedBook = {
+      _id: this.book._id,
       title: this.bookEditForm.value.title,
       author: this.bookEditForm.value.author,
       synopsis: this.bookEditForm.value.synopsis,
@@ -34,12 +42,10 @@ export class EditorComponent implements OnInit {
       deletable: this.bookEditForm.value.deletable,
       editable: this.bookEditForm.value.editable,
     };
-    // this.editedBook.title = this.bookEditForm.value.title;
-    // this.editedBook.author = this.bookEditForm.value.author;
-    // this.editedBook.synopsis = this.bookEditForm.value.synopsis;
-    // this.editedBook.genres = this.bookEditForm.value.genres;
-    // this.editedBook.deletable = this.bookEditForm.value.deletable;
-    // this.editedBook.editable = this.bookEditForm.value.editable;
-    console.log(this.editedBook);
+    console.log('ssss', this.books);
+    this.action.updateBook(this.books, this.editedBook);
+    // this.action.books = this.editedBook;
+    // console.log(this.editedBook);
+    this.router.navigate(['collections']);
   }
 }

@@ -9,6 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
+  // public books: Book[];
 
   getBooks(): Observable<Book[]> {
     console.log('Start');
