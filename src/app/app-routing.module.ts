@@ -4,12 +4,13 @@ import { HomeComponent } from './pages/home/home.component';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
+import { EditorComponent } from './pages/editor/editor.component';
 
 const routes: Routes = [
   // { path: 'home', component: AppComponent },
 
-  { path: 'collection', component: CollectionComponent },
-  { path: 'edit/:id', component: CardComponent },
+  { path: 'collections', component: CollectionComponent },
+  { path: 'edit/:id', component: EditorComponent },
 ];
 
 @NgModule({

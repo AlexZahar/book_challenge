@@ -51,7 +51,7 @@ export class CollectionComponent implements OnInit {
           break;
         case 'edit':
           this.router.navigate(
-            ['edit']
+            [`edit/${book._id}`]
             // { relativeTo: this.route }
           );
           console.log('EDIT', actionObject.book._id);

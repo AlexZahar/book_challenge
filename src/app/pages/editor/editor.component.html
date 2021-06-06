@@ -1,1 +1,68 @@
-<p>editor works!</p>
+<div class="editor">
+  <div class="editor__wrapper">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <!-- <div class="editor__img"></div> -->
+      <div class="editor__metadata">
+        <div class="editor__metadata-title">
+          <label for="text">Title</label>
+          <input
+            required
+            type="text"
+            [ngModel]="book._id"
+            name="title"
+            #title="ngModel"
+          />
+          <span class="editor__help-block" *ngIf="!title.valid && title.touched"
+            >Title can't be empty</span
+          >
+        </div>
+        <div class="editor__metadata-author">
+          <input required type="text" ngModel name="author" />
+          <label for="text">Author</label>
+        </div>
+        <div class="editor__metadata-synopsis">
+          <input required type="text" ngModel name="synopsis" />
+          <label for="text">Synopsis</label>
+        </div>
+        <div class="editor__metadata-genres">
+          <input required type="text" ngModel name="genres" />
+          <label for="text">Genres</label>
+        </div>
+      </div>
+      <div class="editor__book-actions radio">
+        <div class="editor__book-actions--delete">
+          <h3>Deletable</h3>
+          <div *ngFor="let action of actionsOptions">
+            <label for="">
+              <input
+                required
+                type="radio"
+                name="deletable"
+                ngModel
+                [value]="action"
+              />
+              {{ action }}
+            </label>
+          </div>
+        </div>
+        <div class="editor__book-actions--edit">
+          <h3>Editable</h3>
+          <div *ngFor="let action of actionsOptions">
+            <label for="">
+              <input
+                required
+                type="radio"
+                name="editable"
+                ngModel
+                [value]="action"
+              />
+              {{ action }}
+            </label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" [disabled]="!form.valid">Save</button>
+    </form>
+  </div>
+</div>
+<p>{{ book._id }}</p>
