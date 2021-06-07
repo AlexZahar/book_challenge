@@ -3,7 +3,7 @@
     "_id": "01",
     "username": "Phillip",
     "avatarUrl": "assets/avatars/batman-avatar.svg",
-    "role": "read-write"
+    "role": "write"
   },
   {
     "_id": "02",
@@ -15,6 +15,6 @@
     "_id": "03",
     "username": "Amanda",
     "avatarUrl": " assets/avatars/harley-quinn-avatar.svg",
-    "role": "read-write"
+    "role": "write"
   }
 ]

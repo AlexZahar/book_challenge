@@ -8,16 +8,27 @@
           class="header__logo header__logo--mobile"
         />
       </a>
+      <div></div>
     </span>
     <span *ngIf="isUser" class="header__user col-1-of-2">
-      <a routerLink="/" class="header__user-link">
+      <a
+        routerLink="/"
+        class="header__user-link"
+        (mouseover)="toggleDropdown()"
+        (mouseout)="toggleDropdown()"
+      >
         <img
           src="{{ user.avatarUrl }}"
           alt="User Avatar"
           class="header__avatar header__avatar--mobile"
         />
-        <h2 class="header__user-name">{{ user.username }}</h2>
+        <h2 class="header__user-name">
+          {{ user.username }}
+        </h2>
       </a>
+      <h2 class="header__avatar-dropdown" *ngIf="isDropdown">
+        Access: {{ user.role }}
+      </h2>
     </span>
   </div>
 </header>

@@ -4,6 +4,7 @@ import { Book } from '../../core/interfaces/book';
 import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemService } from 'src/app/core/services/item.service';
+import { ApiService } from 'src/app/core/services/api.service';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -21,11 +22,11 @@ export class CardComponent implements OnInit {
   selectedOption = '';
   isOpened = false;
 
-  constructor(private route: ActivatedRoute, private action: ItemService) {}
+  constructor(private api: ApiService, private action: ItemService) {}
 
   ngOnInit(): void {
-    this.isActionActive = this.action.displayItemAction;
     this.checkBookOptions();
+    this.isActionActive = this.action.displayItemAction;
   }
   toggleDropdown() {
     this.isOpened = !this.isOpened;
@@ -39,10 +40,15 @@ export class CardComponent implements OnInit {
     }
   }
   checkBookOptions() {
-    this.route.url.subscribe(path => {
-      this.currentRoute = path[0].path;
-    });
-
+    // // check if the current path
+    // this.route.url.subscribe(path => {
+    //   this.currentRoute = path[0].path;
+    // });
+    console.log(this.api.loggedUser.role);
+    if (this.api.loggedUser.role !== 'write') {
+      this.action.displayItemAction = false;
+      return;
+    }
     this.book.deletable || this.book.editable
       ? (this.isCardAction = true)
       : (this.isCardAction = false);

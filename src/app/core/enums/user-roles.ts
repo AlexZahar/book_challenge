@@ -1,4 +1,4 @@
 export enum UserRoles {
-  ReadWrite = 'read-write',
+  ReadWrite = 'write',
   Read = 'read',
 }

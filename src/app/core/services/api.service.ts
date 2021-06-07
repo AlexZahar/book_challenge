@@ -3,6 +3,7 @@ import { Book } from '../interfaces/book';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ import { environment } from '../../../environments/environment';
 export class ApiService {
   constructor(private http: HttpClient) {}
   // public books: Book[];
-
+  public loggedUser: User;
   getBooks(): Observable<Book[]> {
     console.log('Start');
     return this.http.get<Book[]>(

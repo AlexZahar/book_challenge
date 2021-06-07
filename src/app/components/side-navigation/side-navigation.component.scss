@@ -6,11 +6,13 @@
   //   width: 200px;
   position: absolute;
   // background-color: white;
-  background-image: linear-gradient(
-    to right bottom,
-    rgba($color-primary-light, 1),
-    rgba($color-gray-light-1, 1)
-  );
+  // background-image: linear-gradient(
+  //   to right bottom,
+  //   rgba($color-primary-light, 1),
+  //   rgba($color-gray-light-1, 1)
+  // );
+  box-shadow: 0px 0px 12px -10px rgba(0, 0, 0, 0.93);
+  background-color: white;
   z-index: 2;
   //   box-shadow: 0px 0px 10px black;
   &__expand {

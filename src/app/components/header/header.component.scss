@@ -42,5 +42,10 @@
   &__avatar {
     display: inline-block;
     max-height: 6rem;
+    &-dropdown {
+      // margin-top: 20px;
+      color: black;
+      position: absolute;
+    }
   }
 }

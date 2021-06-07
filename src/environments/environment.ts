@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:4200',
+  // currently there are 3 users that can be selected. The index 1 has read access only while others have write access
+  loggedInUser: 2,
 };
 
 /*
