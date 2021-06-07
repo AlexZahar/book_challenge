@@ -17,9 +17,9 @@
             name="cover"
             #title="ngModel"
           />
-          <span class="editor__help-block" *ngIf="!title.valid && title.touched"
+          <!-- <span class="editor__help-block" *ngIf="!title.valid && title.touched"
             >Please add a cover image url</span
-          >
+          > -->
         </div>
         <div class="editor__metadata-title">
           <label for="text">* Title</label>
@@ -33,19 +33,23 @@
             name="title"
             #title="ngModel"
           />
-          <span class="editor__help-block" *ngIf="!title.valid && title.touched"
+          <!-- <span class="editor__help-block" *ngIf="!title.valid && title.touched"
             >Please add a book title</span
-          >
+          > -->
         </div>
         <div class="editor__metadata-author">
-          <label for="text">Author</label>
+          <label for="text">* Author</label>
           <input
+            required
             (keyup)="updateCardPreview($event)"
             placeholder="John Doe"
             type="text"
             [ngModel]="bookToEdit.author"
             name="author"
           />
+          <!-- <span class="editor__help-block" *ngIf="!title.valid && title.touched"
+            >Please add the book author</span
+          > -->
         </div>
         <div class="editor__metadata-genres">
           <label for="text">Genres</label>
@@ -58,11 +62,10 @@
           />
         </div>
         <div class="editor__metadata-synopsis">
-          <label for="text">* Synopsis (250 characters)</label>
+          <label for="text">Synopsis (250 characters)</label>
           <textarea
             (keyup)="updateCardPreview($event)"
             placeholder="Passage of the book which will be displayed as a preview. "
-            required
             rows="5"
             type="text"
             maxlength="240"

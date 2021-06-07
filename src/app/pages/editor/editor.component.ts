@@ -52,7 +52,7 @@ export class EditorComponent implements OnInit, OnDestroy {
       cover: this.bookEditForm.value.cover,
       author: this.bookEditForm.value.author,
       synopsis: this.bookEditForm.value.synopsis,
-      genres: this.bookEditForm.value.genres,
+      genres: [this.bookEditForm.value.genres],
       deletable: this.bookEditForm.value.deletable,
       editable: this.bookEditForm.value.editable,
     };
@@ -68,7 +68,7 @@ export class EditorComponent implements OnInit, OnDestroy {
       cover: this.bookEditForm.value.cover,
       author: this.bookEditForm.value.author,
       synopsis: this.bookEditForm.value.synopsis,
-      genres: this.bookEditForm.value.genres,
+      genres: [this.bookEditForm.value.genres],
       deletable: this.bookEditForm.value.deletable,
       editable: this.bookEditForm.value.editable,
     };

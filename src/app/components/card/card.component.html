@@ -11,9 +11,10 @@
       <h4>Released on {{ book.releaseDate }}</h4>
       <p class="card__preview-synopsis">{{ book.synopsis }}</p>
       <div class="card__preview-genre-block">
-        <h4 class="card__preview-genre" *ngFor="let genre of book.genres">
+        <span class="bolder">Genre</span> <br />
+        <span *ngFor="let genre of book.genres">
           {{ genre }}
-        </h4>
+        </span>
       </div>
     </div>
   </div>

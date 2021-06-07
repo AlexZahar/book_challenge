@@ -18,9 +18,9 @@ export class WizzardComponent implements OnInit {
     author: 'J. K. Rowling',
     title: 'Harry Potter',
     cover: 'assets/covers/azkaban1.jpg',
-    genres: 'Literature, Fiction',
+    genres: ['Literature', 'Fiction'],
     synopsis:
-      "Harry is back at the Dursleys' for the summer holidays, where he sees on television that a convict named Sirius Black has escaped from prison. After the Dursley's Aunt Marge insults Harry and his parents, Harry accidentally inflates her, then runs away from home, fearing expulsion from school. ",
+      "Harry is back at the Dursleys' for the summer holidays, where he sees on television that a convict named Sirius Black has escaped from prison. ",
     releaseDate: 'July 8, 1999',
     editable: false,
     deletable: false,
@@ -43,7 +43,7 @@ export class WizzardComponent implements OnInit {
       cover: this.bookEditForm.value.cover,
       author: this.bookEditForm.value.author,
       synopsis: this.bookEditForm.value.synopsis,
-      genres: this.bookEditForm.value.genres,
+      genres: [this.bookEditForm.value.genres],
       deletable: this.bookEditForm.value.deletable,
       editable: this.bookEditForm.value.editable,
     };
