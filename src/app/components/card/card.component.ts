@@ -3,6 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '../../core/interfaces/book';
 import { Route } from '@angular/compiler/src/core';
 import { ActivatedRoute } from '@angular/router';
+import { ItemService } from 'src/app/core/services/item.service';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -13,15 +14,17 @@ export class CardComponent implements OnInit {
   @Input() isCardSettings: boolean;
   @Output() selectedAction = new EventEmitter<{ action: string; book: Book }>();
   actionObject: { action: string; book: Book };
+  isActionActive: boolean;
   isCardAction = false;
   currentRoute: any;
   menuOptions: any[] = [];
   selectedOption = '';
   isOpened = false;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private action: ItemService) {}
 
   ngOnInit(): void {
+    this.isActionActive = this.action.displayItemAction;
     this.checkBookOptions();
   }
   toggleDropdown() {

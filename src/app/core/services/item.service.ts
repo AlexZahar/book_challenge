@@ -9,6 +9,7 @@ export class ItemService {
   public bookToEdit: Book;
   public successMessage: string = '';
   public displayMessage = false;
+  public displayItemAction = false;
   constructor() {}
 
   deleteBook(array: Book[], elem: Book) {

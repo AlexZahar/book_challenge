@@ -1,18 +1,6 @@
 @import '../../../styles/abstracts/variables';
 .card__collection {
-  // max-width: 600px;
-  // width: 100%;
-  // margin: 100px auto;
-  // display: block;
-  // padding-left: 4rem;
   &-header {
-    // max-width: 500px;
-    // max-width: 74%;
-    // width: 100%;
-    // margin-top: -70px;
-    // display: block;
-    // position: fixed;
-
     z-index: 1;
   }
   &-books {
@@ -24,7 +12,7 @@
     text-align: center;
   }
   &-message {
-    padding: 2rem 0;
+    padding: 1rem 0;
     text-align: center;
     // height: 8rem;
     max-width: 300px;
@@ -35,7 +23,7 @@
     border: 0.2rem solid green;
     border-radius: 12px;
     & p {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       line-height: 1.4rem;
     }
   }

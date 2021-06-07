@@ -30,7 +30,9 @@ export class WizzardComponent implements OnInit {
   editedBook: Book;
   constructor(private router: Router, private action: ItemService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.action.displayItemAction = false;
+  }
   returnToCollection() {
     this.router.navigate(['collections']);
   }

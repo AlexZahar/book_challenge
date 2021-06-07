@@ -16,7 +16,7 @@ export class CollectionComponent implements OnInit {
   successMessage = this.action.successMessage;
   isSuccessMessage = this.action.displayMessage;
   p: number = 1;
-  messageTimer = 2000;
+  messageTimer = 3000;
 
   constructor(
     private api: ApiService,
@@ -27,6 +27,7 @@ export class CollectionComponent implements OnInit {
     console.log('IS Success message', this.isSuccessMessage);
     console.log(' message', this.successMessage);
     this.getBooks();
+    this.action.displayItemAction = true;
     this.isSuccessMessage ? this.displaySuccessMessage() : null;
   }
 

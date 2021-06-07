@@ -7,7 +7,6 @@
   <div class="card__collection-books">
     <div class="card__collection-message" *ngIf="isSuccessMessage">
       <p>{{ successMessage }}</p>
-      <!-- <p>SSSS</p> -->
     </div>
     <app-card
       *ngFor="
@@ -19,7 +18,7 @@
       (selectedAction)="onActionSelected($event)"
     ></app-card>
   </div>
-  <div class="card__collection-pagination" *ngIf="books">
+  <div class="card__collection-pagination" *ngIf="filteredBooks">
     <pagination-controls
       class="my-pagination"
       (pageChange)="p = $event"

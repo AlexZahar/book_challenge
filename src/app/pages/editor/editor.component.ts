@@ -35,7 +35,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.isCardAction = false;
+    this.action.displayItemAction = false;
     this.bookToEdit = this.action.bookToEdit;
     console.log('bookToEdit', this.bookToEdit);
     this.book = {
