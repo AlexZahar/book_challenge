@@ -10,6 +10,11 @@
       <h3 class="card__preview-author">Written by {{ book.author }}</h3>
       <h4>Released on {{ book.releaseDate }}</h4>
       <p class="card__preview-synopsis">{{ book.synopsis }}</p>
+      <div class="card__preview-genre-block">
+        <h4 class="card__preview-genre" *ngFor="let genre of book.genres">
+          {{ genre }}
+        </h4>
+      </div>
     </div>
   </div>
   <div class="card__menu-button" *ngIf="isCardAction">

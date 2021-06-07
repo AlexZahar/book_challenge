@@ -5,7 +5,12 @@
   height: 100%;
   //   width: 200px;
   position: absolute;
-  background-color: white;
+  // background-color: white;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 1),
+    rgba($color-gray-light-1, 1)
+  );
   z-index: 2;
   //   box-shadow: 0px 0px 10px black;
   &__expand {

@@ -30,8 +30,12 @@
   // max-width: 290px;
   // background: red;wi
   font-size: 1.5rem;
+  // &:hover{
+
+  // }
   .current {
     background-color: $color-primary;
     color: $color-black;
+    font-size: 1.7rem;
   }
 }

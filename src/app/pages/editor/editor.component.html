@@ -1,8 +1,8 @@
 <div class="editor" *ngIf="bookToEdit">
   <div class="editor__nav">
-    <h1>Book Editor</h1>
+    <h1 class="hero--heading">Book Editor</h1>
   </div>
-  <app-card [book]="bookToEdit"></app-card>
+  <app-card [book]="bookToEdit" [isCardSettings]="isCardAction"></app-card>
   <div class="editor__wrapper">
     <form (ngSubmit)="onSubmit()" #form="ngForm">
       <div class="editor__metadata">

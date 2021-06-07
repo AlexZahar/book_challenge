@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardComponent implements OnInit {
   @Input() book: Book;
+  @Input() isCardSettings: boolean;
   @Output() selectedAction = new EventEmitter<{ action: string; book: Book }>();
   actionObject: { action: string; book: Book };
   isCardAction = false;
@@ -43,7 +44,7 @@ export class CardComponent implements OnInit {
       ? (this.isCardAction = true)
       : (this.isCardAction = false);
 
-    this.book.deletable ? this.menuOptions.push('Delete') : null;
     this.book.editable ? this.menuOptions.push('Edit') : null;
+    this.book.deletable ? this.menuOptions.push('Delete') : null;
   }
 }

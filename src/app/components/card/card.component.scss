@@ -36,6 +36,13 @@
       padding-top: 1rem;
       width: 100%;
     }
+    &-genre {
+      margin-top: 2rem;
+      display: inline-block;
+      &:not(:first-child) {
+        margin-left: 1.6rem;
+      }
+    }
   }
   &__menu-button {
     position: absolute;

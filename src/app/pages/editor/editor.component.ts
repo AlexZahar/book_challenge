@@ -1,4 +1,11 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  ViewChild,
+  Output,
+  OnDestroy,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Book } from 'src/app/core/interfaces/book';
@@ -9,8 +16,12 @@ import { ItemService } from 'src/app/core/services/item.service';
   templateUrl: './editor.component.html',
   styleUrls: ['./editor.component.scss'],
 })
-export class EditorComponent implements OnInit {
+export class EditorComponent implements OnInit, OnDestroy {
+  ngOnDestroy(): void {
+    this.isCardAction = true;
+  }
   @ViewChild('form') bookEditForm: NgForm;
+  isCardAction: boolean;
   books: Book[] = this.action.books;
   book: any;
   bookToEdit: Book;
@@ -23,6 +34,7 @@ export class EditorComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.isCardAction = false;
     this.bookToEdit = this.action.bookToEdit;
     console.log('bookToEdit', this.bookToEdit);
     this.book = {
