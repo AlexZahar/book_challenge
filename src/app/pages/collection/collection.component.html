@@ -5,6 +5,10 @@
     ></app-content-header>
   </div>
   <div class="card__collection-books">
+    <div class="card__collection-message" *ngIf="isSuccessMessage">
+      <p>{{ successMessage }}</p>
+      <!-- <p>SSSS</p> -->
+    </div>
     <app-card
       *ngFor="
         let book of filteredBooks
@@ -15,7 +19,7 @@
       (selectedAction)="onActionSelected($event)"
     ></app-card>
   </div>
-  <div class="card__collection-pagination">
+  <div class="card__collection-pagination" *ngIf="books">
     <pagination-controls
       class="my-pagination"
       (pageChange)="p = $event"

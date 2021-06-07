@@ -23,6 +23,22 @@
     display: block;
     text-align: center;
   }
+  &-message {
+    padding: 2rem 0;
+    text-align: center;
+    // height: 8rem;
+    max-width: 300px;
+
+    width: 100%;
+    margin: 0 auto;
+    color: green;
+    border: 0.2rem solid green;
+    border-radius: 12px;
+    & p {
+      font-size: 1.8rem;
+      line-height: 1.4rem;
+    }
+  }
 }
 .my-pagination ::ng-deep .ngx-pagination {
   margin: 0 auto;

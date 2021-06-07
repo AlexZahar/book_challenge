@@ -27,6 +27,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   bookToEdit: Book;
   actionsOptions: [true, false] = [true, false];
   editedBook: Book;
+  successMessage = 'Card edited successfully!';
   constructor(
     private route: ActivatedRoute,
     private action: ItemService,
@@ -75,6 +76,7 @@ export class EditorComponent implements OnInit, OnDestroy {
     this.action.updateBook(this.books, this.editedBook);
     // this.action.books = this.editedBook;
     // console.log(this.editedBook);
+    this.action.displaySuccessMessage(this.successMessage);
     this.router.navigate(['collections']);
   }
 }

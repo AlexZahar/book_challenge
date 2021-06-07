@@ -7,6 +7,8 @@ import { Book } from '../interfaces/book';
 export class ItemService {
   public books: any = [];
   public bookToEdit: Book;
+  public successMessage: string = '';
+  public displayMessage = false;
   constructor() {}
 
   deleteBook(array: Book[], elem: Book) {
@@ -14,7 +16,7 @@ export class ItemService {
       const deleteBook = array.filter(e => e._id === elem._id);
       console.log(deleteBook);
 
-      return deleteBook.forEach(f =>
+      deleteBook.forEach(f =>
         array.splice(
           array.findIndex(e => e._id === f._id),
           1
@@ -26,11 +28,14 @@ export class ItemService {
   }
   updateBook(array: Book[], elem: Book) {
     try {
-      // array[array.findIndex(el => el._id === elem._id)] = elem;
       let foundIndex = array.findIndex(x => x._id == elem._id);
       array[foundIndex] = elem;
     } catch (error) {
       console.log(error);
     }
+  }
+  displaySuccessMessage(successMessage: string) {
+    this.successMessage = successMessage;
+    this.displayMessage = true;
   }
 }

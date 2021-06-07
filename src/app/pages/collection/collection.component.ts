@@ -13,7 +13,10 @@ export class CollectionComponent implements OnInit {
   books: Book[] = this.action.books;
   filteredBooks: Book[] = [];
   bookToEdit: Book;
+  successMessage = this.action.successMessage;
+  isSuccessMessage = this.action.displayMessage;
   p: number = 1;
+  messageTimer = 2000;
 
   constructor(
     private api: ApiService,
@@ -21,14 +24,19 @@ export class CollectionComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
+    console.log('IS Success message', this.isSuccessMessage);
+    console.log(' message', this.successMessage);
     this.getBooks();
+    this.isSuccessMessage ? this.displaySuccessMessage() : null;
   }
 
   getBooks() {
     try {
       if (this.books.length) {
         console.log(this.books);
+
         this.filteredBooks = this.books;
+
         return;
       }
       this.api.getBooks().subscribe(data => {
@@ -40,7 +48,15 @@ export class CollectionComponent implements OnInit {
       console.log(error);
     }
   }
-
+  displaySuccessMessage() {
+    if (this.isSuccessMessage) {
+      setTimeout(() => {
+        this.isSuccessMessage = false;
+        this.action.displayMessage = false;
+      }, this.messageTimer);
+    }
+    return;
+  }
   /**
    * Edit and delete books
    * @param actionObject
@@ -54,6 +70,7 @@ export class CollectionComponent implements OnInit {
           if (confirm(`Are you sure you want to delete ${book.title}?`)) {
             this.action.deleteBook(this.books, book);
           }
+
           break;
         case 'edit':
           this.action.bookToEdit = book;

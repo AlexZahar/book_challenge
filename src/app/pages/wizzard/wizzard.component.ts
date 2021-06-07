@@ -25,6 +25,7 @@ export class WizzardComponent implements OnInit {
     editable: false,
     deletable: false,
   };
+  successMessage = 'Yai, your book was created!';
   books: Book[] = this.action.books;
   editedBook: Book;
   constructor(private router: Router, private action: ItemService) {}
@@ -52,6 +53,7 @@ export class WizzardComponent implements OnInit {
   onSubmit() {
     this.action.books.push(this.editedBook);
     console.log('WIZZARD WORKS SUBMIT');
+    this.action.displaySuccessMessage(this.successMessage);
     this.router.navigate(['collections']);
   }
 }
