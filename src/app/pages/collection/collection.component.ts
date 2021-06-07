@@ -36,7 +36,7 @@ export class CollectionComponent implements OnInit {
       if (this.books.length) {
         console.log(this.books);
 
-        this.filteredBooks = this.books;
+        this.filteredBooks = this.action.books;
 
         return;
       }

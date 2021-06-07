@@ -1,25 +1,17 @@
 @import '../../../styles/abstracts/mixins';
 @import '../../../styles/abstracts/variables';
 .nav {
-  //   margin-top: 200px;
   height: 100%;
-  //   width: 200px;
+
   position: absolute;
-  // background-color: white;
-  // background-image: linear-gradient(
-  //   to right bottom,
-  //   rgba($color-primary-light, 1),
-  //   rgba($color-gray-light-1, 1)
-  // );
+
   box-shadow: 0px 0px 12px -10px rgba(0, 0, 0, 0.93);
   background-color: white;
   z-index: 2;
-  //   box-shadow: 0px 0px 10px black;
+
   &__expand {
     width: 3rem;
-    // height: 3rem;
 
-    // background-color: white;
     -webkit-box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.93);
     box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.93);
     border-radius: 20%;
@@ -30,10 +22,11 @@
     z-index: 99;
     cursor: pointer;
     transform: rotatez(-180deg);
+    background-color: white;
     transition: transform 200ms ease-in-out;
     margin-bottom: 29px;
     &:hover {
-      background-color: $color-primary-light;
+      background-color: $color-primary;
     }
   }
   &-expanded {
@@ -55,8 +48,6 @@
         opacity: 0.7;
       }
       a {
-        // float: right;
-        // display: inline-block;
         height: 3.4rem;
         text-decoration: none;
         gap: 1rem;
@@ -64,11 +55,9 @@
         color: $color-black;
       }
       p {
-        // vertical-align: middle;
         margin: 0 auto;
         display: inline-block;
         font-weight: bolder;
-        // float: right;
       }
       &-active {
         border-left: 4px solid $color-primary;
@@ -77,16 +66,8 @@
     }
   }
   .icon {
-    // display: inline-block;
     width: 3rem;
-    // fill: red;
 
-    // background-color: red;
-    // color: green;
-    &-active {
-      // border-left: 4px solid $color-primary;
-      // background-color: $color-primary-light-hover;
-    }
     img,
     p {
       color: green;

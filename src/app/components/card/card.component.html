@@ -18,13 +18,18 @@
       </div>
     </div>
   </div>
-  <div class="card__menu-button" *ngIf="isActionActive">
+  <div
+    class="card__menu-button"
+    *ngIf="isActionActive"
+    (mouseover)="toggleDropdown()"
+    (mouseout)="toggleDropdown()"
+  >
     <img
       class="card__menu-button"
       src="../../../assets/icons/edit.svg"
       alt=""
-      (click)="toggleDropdown()"
     />
+
     <ul
       class="card__dropdown-menu"
       [ngClass]="isOpened ? 'active' : 'inactive'"
