@@ -30,14 +30,14 @@ export class CollectionComponent implements OnInit {
     this.action.displayItemAction = true;
     this.isSuccessMessage ? this.displaySuccessMessage() : null;
   }
-
+  /**
+   * Fetching books data from the assets/api/books/books.json file
+   */
   getBooks() {
     try {
       if (this.books.length) {
         console.log(this.books);
-
         this.filteredBooks = this.action.books;
-
         return;
       }
       this.api.getBooks().subscribe(data => {
@@ -49,6 +49,10 @@ export class CollectionComponent implements OnInit {
       console.log(error);
     }
   }
+
+  /**
+   * After editting/creating a book record display a success message
+   */
   displaySuccessMessage() {
     if (this.isSuccessMessage) {
       setTimeout(() => {
@@ -58,8 +62,9 @@ export class CollectionComponent implements OnInit {
     }
     return;
   }
+
   /**
-   * Edit and delete books
+   * Handle Edit/Delete actions
    * @param actionObject
    */
   onActionSelected(actionObject: { action: string; book: Book }) {
@@ -71,15 +76,10 @@ export class CollectionComponent implements OnInit {
           if (confirm(`Are you sure you want to delete ${book.title}?`)) {
             this.action.deleteBook(this.books, book);
           }
-
           break;
         case 'edit':
           this.action.bookToEdit = book;
-          this.router.navigate(
-            [`edit/${book._id}`]
-            // { relativeTo: this.route }
-          );
-          console.log('EDIT', actionObject.book._id);
+          this.router.navigate([`edit/${book._id}`]);
           break;
         default:
           return;

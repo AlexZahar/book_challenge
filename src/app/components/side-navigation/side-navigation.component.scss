@@ -24,18 +24,18 @@
     transform: rotatez(-180deg);
     background-color: white;
     transition: transform 200ms ease-in-out;
-    margin-bottom: 29px;
+    margin-bottom: 2rem;
     &:hover {
       background-color: $color-primary;
     }
   }
   &-expanded {
-    width: 100px;
+    width: 10rem;
   }
   &__list {
-    margin-top: 50px;
+    margin-top: 8rem;
     display: block;
-    height: 20px;
+    height: 1.6rem;
     text-align: center;
     &item {
       list-style: none;
@@ -74,7 +74,7 @@
       fill: orange;
     }
   }
-  //close state
+
   &-closed &__expand {
     transform: rotatez(0deg);
   }

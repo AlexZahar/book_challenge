@@ -4,12 +4,12 @@
   margin: 3rem auto;
   position: relative;
   max-width: 50rem;
-  //   height: 600px;
   width: 100%;
   border-radius: 0.6rem;
   background-color: $color-white;
   -webkit-box-shadow: 6px 8px 12px -1px rgba(0, 0, 0, 0.19);
   box-shadow: 6px 8px 12px -1px rgba(0, 0, 0, 0.19);
+
   &__wrapper {
     padding: 1rem 0;
   }
@@ -44,8 +44,6 @@
       &:nth-child(2) {
         margin-left: 1.6rem;
       }
-      // span:not(:first-child) {
-      // }
     }
   }
   &__menu-button {
@@ -58,7 +56,6 @@
     }
   }
   &__dropdown-menu {
-    // width: 60px;
     margin-top: 3rem;
     position: absolute;
     width: 7rem;
@@ -83,21 +80,18 @@
 }
 @media only screen and (max-width: 499px) {
   .card {
-    // max-width: 40rem;
-    // text-align: center;
     &__image {
       display: block;
       padding-top: 1rem;
       margin: 0 auto;
       img {
-        max-width: 200px;
+        max-width: 12rem;
         margin: 0 auto;
         display: block;
       }
     }
     &__preview {
       display: block;
-      // max-width: 200px;
       width: 80%;
       padding: 1rem;
       margin: 0 auto;

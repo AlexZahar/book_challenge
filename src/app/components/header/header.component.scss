@@ -5,7 +5,6 @@
   display: block;
   height: 10rem;
   @include sticky;
-  // background-color: rgb(19, 19, 19);
   background-image: linear-gradient(
     to right bottom,
     rgba($color-primary-light, 1),
@@ -43,7 +42,6 @@
     display: inline-block;
     max-height: 6rem;
     &-dropdown {
-      // margin-top: 20px;
       color: black;
       position: absolute;
     }

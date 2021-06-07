@@ -8,14 +8,14 @@
     width: 100%;
   }
   &__nav-side {
-    max-width: 70px;
+    max-width: 5rem;
     position: fixed;
     height: 100%;
   }
   &__content-area {
     display: block;
     width: 70%;
-    padding-left: 70px;
+    padding-left: 4rem;
     margin: 100px auto;
   }
 }
@@ -27,7 +27,7 @@
     &__content-area {
       display: block;
       width: 90%;
-      margin: 100px auto;
+      margin: 5.5rem auto;
     }
   }
 }

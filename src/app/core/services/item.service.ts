@@ -10,8 +10,14 @@ export class ItemService {
   public successMessage: string = '';
   public displayMessage = false;
   public displayItemAction = false;
+
   constructor() {}
 
+  /**
+   * Handle book deletion
+   * @param array
+   * @param elem
+   */
   deleteBook(array: Book[], elem: Book) {
     try {
       const deleteBook = array.filter(e => e._id === elem._id);
@@ -27,6 +33,12 @@ export class ItemService {
       console.log(error);
     }
   }
+
+  /**
+   * Handle book update action
+   * @param array
+   * @param elem
+   */
   updateBook(array: Book[], elem: Book) {
     try {
       let foundIndex = array.findIndex(x => x._id == elem._id);
@@ -35,6 +47,11 @@ export class ItemService {
       console.log(error);
     }
   }
+
+  /**
+   * Display a success message after successfully Creating or Editing an item record
+   * @param successMessage
+   */
   displaySuccessMessage(successMessage: string) {
     this.successMessage = successMessage;
     this.displayMessage = true;

@@ -11,7 +11,7 @@
     <app-card
       *ngFor="
         let book of filteredBooks
-          | paginate: { itemsPerPage: 3, currentPage: p };
+          | paginate: { itemsPerPage: 4, currentPage: p };
         let i = index
       "
       [book]="book"

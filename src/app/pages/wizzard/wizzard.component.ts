@@ -13,6 +13,11 @@ export class WizzardComponent implements OnInit {
   @ViewChild('form') bookEditForm: NgForm;
   actionsOptions: [true, false] = [true, false];
   newId: string = '';
+  successMessage = 'Yai, your book was created!';
+  books: Book[] = this.action.books;
+  editedBook: Book;
+
+  // Default book preview when oppening wizzard
   bookToEdit: any = {
     _id: '0004',
     author: 'J. K. Rowling',
@@ -25,20 +30,28 @@ export class WizzardComponent implements OnInit {
     editable: false,
     deletable: false,
   };
-  successMessage = 'Yai, your book was created!';
-  books: Book[] = this.action.books;
-  editedBook: Book;
+
   constructor(private router: Router, private action: ItemService) {}
 
   ngOnInit(): void {
+    // Removing edit options from the card in wizzard mode
     this.action.displayItemAction = false;
   }
+
+  /**
+   * Handle cancel button behavior
+   */
   returnToCollection() {
     this.router.navigate(['collections']);
   }
+
+  /**
+   * Card preview update on each key-up
+   * @param event
+   */
   updateCardPreview(event: any) {
     this.editedBook = {
-      _id: this.generateId(100),
+      _id: this.generateId(999),
       title: this.bookEditForm.value.title,
       cover: this.bookEditForm.value.cover,
       author: this.bookEditForm.value.author,
@@ -49,12 +62,20 @@ export class WizzardComponent implements OnInit {
     };
     this.bookToEdit = this.editedBook;
   }
+
+  /**
+   * Generating a random ID based on the input max value
+   * @param max
+   */
   generateId(max: number) {
     return (this.newId = Math.floor(Math.random() * max).toString());
   }
+
+  /**
+   * On form submit, create a new card and return to "collections" page
+   */
   onSubmit() {
     this.action.books.push(this.editedBook);
-    console.log('WIZZARD WORKS SUBMIT');
     this.action.displaySuccessMessage(this.successMessage);
     this.router.navigate(['collections']);
   }

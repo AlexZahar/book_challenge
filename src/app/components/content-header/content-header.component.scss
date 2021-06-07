@@ -3,26 +3,21 @@
 
 .header {
   margin: 0 auto;
- 
+
   z-index: $z-index-header;
   &__wrapper {
     display: block;
-    // background-color: greenyellow;
     height: 6rem;
-    // position: fixed;
     width: 100%;
     input[type='search'] {
       display: inline-block;
       right: 2rem;
 
       position: absolute;
-      //   top: 50%;
       vertical-align: middle;
       font-size: medium;
-      margin-top: 20px;
-      //   float: right;
-      //   margin: 0 auto;
-      //   transform: translateY(-50%);
+      margin-top: 1.4rem;
+
       border-radius: 5px;
       border-color: rgb(110, 110, 110);
     }

@@ -9,16 +9,24 @@ import { User } from '../interfaces/user';
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(private http: HttpClient) {}
-  // public books: Book[];
   public loggedUser: User;
+
+  constructor(private http: HttpClient) {}
+
+  /**
+   * Fetching Books data from the json file
+   */
   getBooks(): Observable<Book[]> {
     console.log('Start');
     return this.http.get<Book[]>(
       `${environment.apiBaseUrl}/assets/api/books/books.json`
     );
   }
+
+  /**
+   * Fetching Users data from the json file
+   */
   getUsers() {
-    return this.http.get('assets/data/users.json');
+    return this.http.get<User[]>('assets/data/users.json');
   }
 }
