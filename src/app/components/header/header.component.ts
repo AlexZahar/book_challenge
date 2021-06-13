@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../core/interfaces/user';
-import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../../core/services/api.service';
 import { environment } from 'src/environments/environment';
 @Component({

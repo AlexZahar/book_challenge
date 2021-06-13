@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Book } from '../../core/interfaces/book';
-import { Route } from '@angular/compiler/src/core';
-import { ActivatedRoute } from '@angular/router';
+
 import { ItemService } from 'src/app/core/services/item.service';
 import { ApiService } from 'src/app/core/services/api.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -16,12 +16,13 @@ export class CardComponent implements OnInit {
   @Output() selectedAction = new EventEmitter<{ action: string; book: Book }>();
   actionObject: { action: string; book: Book };
   isActionActive: boolean;
+  users: any = [];
   isCardAction = false;
   currentRoute: any;
   menuOptions: any[] = [];
   selectedOption = '';
   isOpened = false;
-
+  role: any;
   constructor(private api: ApiService, private action: ItemService) {}
 
   ngOnInit(): void {
@@ -39,11 +40,15 @@ export class CardComponent implements OnInit {
       this.selectedAction.emit(this.actionObject);
     }
   }
-  checkBookOptions() {
-    // // check if the current path
-    // this.route.url.subscribe(path => {
-    //   this.currentRoute = path[0].path;
-    // });
+  async checkBookOptions() {
+    if (!this.api.loggedUser.role) {
+      this.api.getUsers().subscribe(data => {
+        const users = data;
+        const user = this.users[environment.loggedInUser];
+        this.api.loggedUser.role = user.role;
+      });
+    }
+
     console.log(this.api.loggedUser.role);
     if (this.api.loggedUser.role !== 'write') {
       this.action.displayItemAction = false;

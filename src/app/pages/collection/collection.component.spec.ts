@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CollectionComponent } from './collection.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 describe('CollectionComponent', () => {
   let component: CollectionComponent;
@@ -8,15 +11,19 @@ describe('CollectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CollectionComponent ]
-    })
-    .compileComponents();
+      declarations: [CollectionComponent],
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule,
+        NgxPaginationModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CollectionComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.autoDetectChanges();
   });
 
   it('should create', () => {

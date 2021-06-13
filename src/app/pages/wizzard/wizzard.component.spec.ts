@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WizzardComponent } from './wizzard.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('WizzardComponent', () => {
   let component: WizzardComponent;
@@ -8,9 +10,9 @@ describe('WizzardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WizzardComponent ]
-    })
-    .compileComponents();
+      declarations: [WizzardComponent],
+      imports: [RouterTestingModule, FormsModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

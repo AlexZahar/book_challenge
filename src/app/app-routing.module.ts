@@ -9,7 +9,6 @@ import { WizzardComponent } from './pages/wizzard/wizzard.component';
 
 const routes: Routes = [
   { path: '', component: CollectionComponent },
-
   { path: 'collections', component: CollectionComponent },
   { path: 'edit/:id', component: EditorComponent },
   { path: 'wizzard', component: WizzardComponent },
